@@ -1,8 +1,12 @@
 import React from 'react';
 import Navbar from "../components/homepage-components/Navbar.jsx";
 import Buttons from "../components/homepage-components/Buttons.jsx";
+import {useNavigate} from "react-router-dom";
 
 const HomePage = () => {
+
+    const nav = useNavigate();
+
   return (
       <main className="bg-linear-to-br from-black via-zinc-900 to-zinc-700
                         min-h-screen flex flex-col">
@@ -15,7 +19,7 @@ const HomePage = () => {
                   NO Sign Up required!
               </p>
               <div className="flex space-x-6 mt-5">
-                  <Buttons ButtonType="SEND" toLink="/sender"/>
+                  <Buttons ButtonType="SEND" onClickFunc={() => nav("/send")}/>
                   <Buttons ButtonType="RECEIVE" />
               </div>
           </section>

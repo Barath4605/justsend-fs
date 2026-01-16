@@ -1,21 +1,40 @@
 import React from 'react';
 import Navbar from "../components/homepage-components/Navbar.jsx";
 import Buttons from "../components/homepage-components/Buttons.jsx";
+import TextEditor from "../components/senderpage-components/TextEditor.jsx";
+import GeneratedCode from "../components/senderpage-components/GeneratedCode.jsx";
+
+
 
 const Sender = () => {
+    const [text, setText] = React.useState("");
+    const[messageSent, setMessageSent] = React.useState(false);
+    console.log(text);
+
+    function checkValidMessage() {
+        const plain = text.replace(/<[^>]*>/g, "").trim()
+        console.log(plain);
+        if(plain === "") {
+             setMessageSent(false);
+        } else {
+            setMessageSent(true);
+        }
+    }
+
   return (
       <section className="bg-linear-to-br from-black via-zinc-900 to-zinc-700
                           min-h-screen flex flex-col">
           <Navbar />
 
-          <div className="text-white w-[80%] m-auto lg:w-[60%]">
-              <h1 className="text-4xl lg:my-2 lg:text-6xl font-bold lg:w-[90%]">SEND TEXT</h1>
-              <textarea name="text" rows="17" cols="40" placeholder="Enter your text here" className="bg-linear-to-tl from-gray-800 to-gray-900 my-5 w-full resize-none rounded-md
-                        focus:outline-none focus:ring-0 focus:ring-offset-0 p-2
-                        text-lg tracking-[1.3px] font-['IBM_Plex_Mono']"></textarea>
-              <Buttons ButtonType="Send Message" />
-          </div>
-
+          {!messageSent ? (
+              <div className="text-white w-[80%] m-auto lg:w-[60%]">
+                  <h1 className="text-4xl lg:my-2 lg:text-6xl font-semibold tracking-[3px] lg:w-[90%] font-[Montserrat]">Send Text</h1>
+                  <TextEditor onChange={setText} />
+                  <div className="my-2">
+                      <Buttons onClickFunc={() => checkValidMessage()} ButtonType="Send Message" />
+                  </div>
+              </div>
+          ) : <GeneratedCode />}
       </section>
   );
 };
