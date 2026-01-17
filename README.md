@@ -1,7 +1,3 @@
-gotchu. plain, human, zero “ai-generated vibes”, no cringe buzzwords.
-
----
-
 # justsend.com
 
 JustSend is a minimal text-sharing app built for speed, privacy, and zero friction.
