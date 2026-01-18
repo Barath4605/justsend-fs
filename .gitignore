@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 
-# Environment variables
+# ENV VARs
 .env
 .env.local
 .env.production
