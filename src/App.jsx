@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import Sender from "./pages/Sender.jsx";
 import {Toaster} from "react-hot-toast";
-import DisplayText from "./components/receiver-components/DisplayText.jsx";
+import DisplayText from "./pages/DisplayText.jsx";
 import Bookmark from "./pages/Bookmark.jsx";
 
 function App() {

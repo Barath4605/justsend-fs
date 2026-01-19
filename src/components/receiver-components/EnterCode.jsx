@@ -43,7 +43,7 @@ const EnterCode = ({onClickFunc}) => {
             setTimeout(() => {
                 nav(`/${otp}`, {state: data});
             },100)
-            console.log(data);
+
         } catch (err) {
             toast.error("Server Not Reachable!");
         }

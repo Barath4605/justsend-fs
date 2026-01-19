@@ -14,13 +14,11 @@ const Sender = () => {
     const [result, setResult] = React.useState(null);
 
     const[messageSent, setMessageSent] = React.useState(false);
-    console.log(text);
 
     const nav = useNavigate();
 
     function checkValidMessage() {
         const plain = text.replace(/<[^>]*>/g, "").trim()
-        console.log(plain);
         if(plain === "") {
             setMessageSent(false);
             return false;
@@ -64,7 +62,7 @@ const Sender = () => {
                       Send Text
                   </h1>
                   <TextEditor onChange={setText} />
-                  <div className="my-2">
+                  <div className="my-5 mb-10">
                       <Buttons onClickFunc={sendMessage} ButtonType="Send Message" />
                   </div>
               </div>

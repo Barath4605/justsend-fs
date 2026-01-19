@@ -6,7 +6,7 @@ const Bookmark = () => {
         <section className="h-screen">
             <Navbar />
             <div className="flex min-h-[90%] items-center justify-center ">
-                <h1 className="text-lg font-semibold tracking-[7px] text-gray-600 shadow-2xl text-shadow-black text-shadow-xl">
+                <h1 className="lg:text-lg font-semibold lg:tracking-[6px] tracking-[4px] w-[80%] text-gray-700  text-center text-shadow-black text-shadow-xl">
                     [the bookmark section is still under production]
                 </h1>
             </div>
