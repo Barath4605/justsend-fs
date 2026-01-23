@@ -6,7 +6,7 @@ import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import "../styles/texteditor.scss"
 import toast from "react-hot-toast";
-import { Bookmark, Copy, CopyCheckIcon } from "lucide-react"
+import { Bookmark, Copy, CopyCheckIcon, Loader2 } from "lucide-react"
 import BookmarkTitleModal from "../components/bookmarks-components/BookmarkTitleModal.jsx";
 
 
@@ -81,11 +81,21 @@ const DisplayText = () => {
         editable: false,
     }, [data])
 
+    // ================ LOADING SCRN ===================
+
     if (loading) {
         return (
-            <main className="bg-linear-to-br from-black via-zinc-900 to-zinc-700
-                                min-h-screen flex flex-col items-center justify-center">
-                <div className="text-white text-2xl">Loading...</div>
+            <main className="flex bg-linear-to-br from-black via-zinc-900 to-zinc-700
+                                min-h-screen items-center justify-center gap-3
+                                text-2xl font-family-[Montserrat] text-gray-600 tracking-widest">
+                <div className="text-center">
+                    <div className="flex items-center justify-center gap-2">
+                        <h1>Loading</h1>
+                        <Loader2 className="h-6 w-6 animate-spin" />
+                    </div>
+                    <h2 className="tracking-normal text-sm">this might take upto a minute or two...</h2>
+                </div>
+                <div>  </div>
             </main>
         );
     }
