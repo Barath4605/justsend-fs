@@ -6,13 +6,14 @@ import GeneratedCode from "../components/senderpage-components/GeneratedCode.jsx
 import toast from 'react-hot-toast'
 import QuickLink from "../components/QuickLink.jsx";
 import {useNavigate} from "react-router-dom";
+import CustomExpiry from "../components/senderpage-components/CustomExpiry.jsx";
 
 
 const Sender = () => {
 
     const [text, setText] = React.useState("");
     const [result, setResult] = React.useState(null);
-
+    const [totalDays, setTotalDays] = React.useState(3);
     const[messageSent, setMessageSent] = React.useState(false);
 
     const nav = useNavigate();
@@ -42,7 +43,7 @@ const Sender = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({text})
+            body: JSON.stringify({text,totalDays})
         });
 
         const data = await res.json()
@@ -62,6 +63,7 @@ const Sender = () => {
                       Send Text
                   </h1>
                   <TextEditor onChange={setText}  />
+                  <CustomExpiry setTotalDays={setTotalDays} totalDays={totalDays} />
                   <div className="my-5 mb-10">
                       <Buttons onClickFunc={sendMessage} ButtonType="Send Message" />
                   </div>
