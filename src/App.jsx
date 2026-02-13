@@ -7,6 +7,7 @@ import DisplayText from "./pages/DisplayText.jsx";
 import Bookmark from "./pages/Bookmark.jsx";
 import SenderPage from "./pages/SenderPage.jsx";
 import SendImg from "./components/senderpage-components/ImageUpload.jsx";
+import DisplayImage from "./pages/DisplayImage.jsx";
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/:code" element={<DisplayText />} />
                 <Route path="/bookmarks" element={<Bookmark />} />
                 <Route path="/image" element={<SendImg />} />
+                <Route path="/image/:code" element={<DisplayImage/>} />
             </Routes>
         </>
     )

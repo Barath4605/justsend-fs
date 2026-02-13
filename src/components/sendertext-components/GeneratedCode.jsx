@@ -19,7 +19,6 @@ const GeneratedCode = ({customFunc, code, expiryAt}) => {
     <section className="w-[90%] lg:w-[70%] m-auto h-[70%]">
         <div className="flex ml-5 flex-1 w-fit items-start justify-start">
             <QuickLink toLink="HOME" onClickFunc={() => nav("/")} />
-            <QuickLink toLink="SEND TEXT" onClickFunc={customFunc} />
         </div>
         <h1 className="text-4xl mx-4 lg:my-2 lg:text-6xl font-semibold tracking-[3px] lg:w-[90%]
         font-[Montserrat] text-white">Generated Code</h1>
