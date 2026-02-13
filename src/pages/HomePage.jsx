@@ -22,7 +22,7 @@ const HomePage = () => {
                       NO Sign Up required!
                   </p>
                   <div className="flex space-x-4 mt-5">
-                      <Buttons ButtonType="SEND" onClickFunc={() => nav("/send")}/>
+                      <Buttons ButtonType="SEND" onClickFunc={() => nav("/option")}/>
                       <Buttons ButtonType="RECEIVE" onClickFunc={() => setOpen(true)} />
                   </div>
               </section>
