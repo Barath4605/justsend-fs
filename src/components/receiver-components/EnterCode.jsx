@@ -41,8 +41,12 @@ const EnterCode = ({onClickFunc}) => {
 
             const data = await res.json();
             setTimeout(() => {
-                nav(`/${otp}`, {state: data});
-            },100)
+                if (data.type === "TEXT") {
+                    nav(`/${otp}`, { state: data });
+                } else if (data.type === "IMAGE") {
+                    nav(`/i/${otp}`, { state: data });
+                }
+            })
 
         } catch (err) {
             toast.error("Server Not Reachable!");

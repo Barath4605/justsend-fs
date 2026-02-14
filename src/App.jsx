@@ -1,10 +1,13 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
-import Sender from "./pages/Sender.jsx";
+import SendText from "./pages/SendText.jsx";
 import {Toaster} from "react-hot-toast";
 import DisplayText from "./pages/DisplayText.jsx";
 import Bookmark from "./pages/Bookmark.jsx";
+import SenderPage from "./pages/SenderPage.jsx";
+import SendImg from "./components/senderpage-components/ImageUpload.jsx";
+import DisplayImage from "./pages/DisplayImage.jsx";
 
 function App() {
     return (
@@ -24,9 +27,12 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/send" element={<Sender />} />
+                <Route path="/option" element={<SenderPage />} />
+                <Route path="/send" element={<SendText />} />
                 <Route path="/:code" element={<DisplayText />} />
                 <Route path="/bookmarks" element={<Bookmark />} />
+                <Route path="/image" element={<SendImg />} />
+                <Route path="/i/:code" element={<DisplayImage/>} />
             </Routes>
         </>
     )

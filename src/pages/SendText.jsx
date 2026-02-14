@@ -1,15 +1,15 @@
 import React from 'react';
 import Navbar from "../components/homepage-components/Navbar.jsx";
 import Buttons from "../components/homepage-components/Buttons.jsx";
-import TextEditor from "../components/senderpage-components/TextEditor.jsx";
-import GeneratedCode from "../components/senderpage-components/GeneratedCode.jsx";
+import TextEditor from "../components/sendertext-components/TextEditor.jsx";
+import GeneratedCode from "../components/sendertext-components/GeneratedCode.jsx";
 import toast from 'react-hot-toast'
 import QuickLink from "../components/QuickLink.jsx";
 import {useNavigate} from "react-router-dom";
-import CustomExpiry from "../components/senderpage-components/CustomExpiry.jsx";
+import CustomExpiry from "../components/sendertext-components/CustomExpiry.jsx";
 
 
-const Sender = () => {
+const SendText = () => {
 
     const [text, setText] = React.useState("");
     const [result, setResult] = React.useState(null);
@@ -58,13 +58,16 @@ const Sender = () => {
 
           {!messageSent ? (
               <div className="text-white w-[95%] m-auto lg:w-[60%]">
-                  <QuickLink toLink="HOME" onClickFunc={() => nav("/")}/>
+                  <div className="flex">
+                      <QuickLink toLink="HOME" onClickFunc={() => nav("/")}/>
+                      <QuickLink toLink="OPTION" onClickFunc={() => nav("/option")}/>
+                  </div>
                   <h1 className="text-4xl lg:my-2 lg:text-6xl font-semibold tracking-[3px] lg:w-[90%] font-[Montserrat]">
                       Send Text
                   </h1>
                   <TextEditor onChange={setText}  />
                   <CustomExpiry setTotalDays={setTotalDays} totalDays={totalDays} />
-                  <div className="my-5 mb-10">
+                  <div className="my-5 w-fit mb-10">
                       <Buttons onClickFunc={sendMessage} ButtonType="Send Message" />
                   </div>
               </div>
@@ -85,4 +88,4 @@ const Sender = () => {
   );
 };
 
-export default Sender;
+export default SendText;
