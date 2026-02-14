@@ -32,7 +32,7 @@ function App() {
                 <Route path="/:code" element={<DisplayText />} />
                 <Route path="/bookmarks" element={<Bookmark />} />
                 <Route path="/image" element={<SendImg />} />
-                <Route path="/image/:code" element={<DisplayImage/>} />
+                <Route path="/i/:code" element={<DisplayImage/>} />
             </Routes>
         </>
     )

@@ -15,7 +15,7 @@ const DisplayImage = () => {
         async function fetchImage() {
             try {
                 const res = await fetch(
-                    `${import.meta.env.VITE_API_URL}/image/${code}`
+                    `${import.meta.env.VITE_API_URL}/i/${code}`
                 );
 
                 if (!res.ok) {

@@ -67,7 +67,7 @@ const SendText = () => {
                   </h1>
                   <TextEditor onChange={setText}  />
                   <CustomExpiry setTotalDays={setTotalDays} totalDays={totalDays} />
-                  <div className="my-5 mb-10">
+                  <div className="my-5 w-fit mb-10">
                       <Buttons onClickFunc={sendMessage} ButtonType="Send Message" />
                   </div>
               </div>

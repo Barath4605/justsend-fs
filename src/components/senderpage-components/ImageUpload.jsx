@@ -15,6 +15,8 @@ const ImageUpload = () => {
     const [loading, setLoading] = React.useState(false);
     const [result, setResult] = React.useState(null);
 
+    const nav = useNavigate();
+
     function validateFile(selected) {
         if (!selected.type.startsWith("image/")) {
             toast.error("Only image files allowed");
@@ -62,7 +64,7 @@ const ImageUpload = () => {
             formData.append("file", file);
 
             const res = await fetch(
-                `${import.meta.env.VITE_API_URL}/image`,
+                `${import.meta.env.VITE_API_URL}/i`,
                 {
                     method: "POST",
                     body: formData
@@ -100,8 +102,6 @@ const ImageUpload = () => {
             </>
         );
     }
-
-    const nav = useNavigate();
 
     return (
         <>
@@ -152,7 +152,7 @@ const ImageUpload = () => {
                         <img
                             src={preview}
                             alt="preview"
-                            className="rounded-xl w-full max-h-[400px] object-contain bg-black/40"
+                            className="rounded-xl w-full max-h-100 object-contain bg-black/40"
                         />
 
                         <button
